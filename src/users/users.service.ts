@@ -15,7 +15,7 @@ export class UsersService {
     }
 
     createUser(createUserDto: CreateUserDto): User{
-        const newUser: User = {id: Date.now(), name: CreateUserDto.name};
+        const newUser: User = {id: Date.now(), ...createUserDto};
 
         this.users.push(newUser);
 
